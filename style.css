@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.portfolio {
+    color: black;
+    background: #fff;
+}
+
+nav {
+    height: 10vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.burger {
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+.burger:hover {
+    transform: scale(1.5);
+}
+.burger > div {
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    background-color: black;
+}
+.burger-animated .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+.burger-animated .line2 {
+    opacity: 0;
+}
+.burger-animated .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+.line1,
+.line2,
+.line3 {
+    transition: all 0.3s ease;
+}
+
+.logo,
+.burger {
+    z-index: 2;
+}
+
+.nav-open {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50vh;
+    color: white;
+    background-color: black;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 5%;
+    justify-items: center;
+    align-items: center;
+    transform: translateY(-110%);
+}
+.contact {
+    grid-column: 2/3;
+}
+.nav-open h3 {
+    font-size: 24px;
+    padding-bottom: 40px;
+}
+.nav-open p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.social-links a {
+    color: white;
+}
+.social-links a:not(.github) {
+    margin-right: 20px;
+}
+.social-links a:hover .fa-instagram {
+    background: linear-gradient(
+        45deg,
+        #405de6,
+        #5851db,
+        #833ab4,
+        #c13584,
+        #e1306c,
+        #fd1d1d
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social-links a:hover .fa-twitter {
+    background: #1da1f2;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social-links a:hover .fa-github {
+    background: #333;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 5% 1fr 2fr 1fr 5%;
+}
+
+.intro {
+    grid-template-columns: 5% 0.5fr 2fr 0.5fr 5%;
+}
+.skills,
+.projects,
+.about {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero {
+    display: flex;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e15f41;
+}
+.hero.first {
+    flex-direction: column;
+}
+
+.hero.second {
+    top: 40vh;
+}
+.hero-card {
+    border: 2px solid black;
+    color: black;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 20px;
+    transition: all 0.3s ease;
+}
+.hero-card:hover {
+    background-color: black;
+    color: white;
+}
+.hero-card p {
+    font-size: 5rem;
+}
+.hero-card span {
+    font-size: 2rem;
+    margin: 0 5px;
+}
+
+.hero.third {
+    top: 40vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.hero.third h1 {
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+.hero.third a {
+    text-decoration: none;
+    color: #e15f41;
+}
+.hero.third h1:hover {
+    transform: scale(1.5);
+}
+
+.hero.fourth {
+    top: 40vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.details {
+    grid-column: 2/3;
+    align-self: end;
+    margin-bottom: 15%;
+}
+.details h1 {
+    font-weight: 800;
+}
+.details h2 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 10%;
+    margin-top: 10px;
+}
+.details p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.pages-nav {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+}
+
+.pages-nav > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+.pages-nav > div > h3 {
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pages-nav span {
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background-color: black;
+    opacity: 0.5;
+    transition: transform 0.3s ease-out;
+}
+.page-1:hover span,
+.page-2:hover span,
+.page-3:hover span,
+.page-4:hover span {
+    transform: scale(1.5);
+}
+
+.pages-nav > div.active span {
+    opacity: 1;
+}
