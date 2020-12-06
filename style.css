@@ -211,6 +211,9 @@ nav {
     align-items: center;
     justify-content: center;
 }
+.hero.fourth p {
+    font-size: 16px;   
+}
 
 .details {
     grid-column: 2/3;
